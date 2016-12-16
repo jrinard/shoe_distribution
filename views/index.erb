@@ -27,7 +27,7 @@
     <!-- Select box that loops all the brands down as options -->
     <% if @brands.any?() %>
       <select name="brand_id" class="browser-default">
-        <option value=""></option>
+        <!-- <option value=""></option> -->
         <% @brands.each() do |brand| %>
           <option value="<%= brand.id()%>"><%= brand.name() %></option>
         <% end %>

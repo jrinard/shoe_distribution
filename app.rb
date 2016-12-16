@@ -20,7 +20,7 @@ end
 
 #store - single
 get('/store/:id') do
-  @stores = Store.find(params.fetch("id").to_i) #finding single recipe with that id
+  @stores = Store.find(params.fetch("id").to_i) #finding single store with that id
   @brands = @stores.brands
   @allbrands = Brand.all
   erb(:store_detail)
@@ -41,6 +41,28 @@ post('/stores') do
   else
     erb(:errors)
   end
+end
+
+#update store     #!!!!! investigate destory all - need to save multiple brands
+patch('/store/:id') do
+  new_store_name = params["new-name"]
+  new_store_address = params["new-address"]
+  new_store_rating = params['new-rating']
+  #finds the store that matches the id
+  @store = Store.find(params['id'].to_i)
+  #update the store with the data fetched above
+  @store.update({:name => new_store_name, :address => new_store_address, :ratings => new_store_rating})
+  #Destroy all brands associated with store
+  @store.brands.destroy_all
+  #pushes new brand based on the id that was fetched above to the store
+  @store.brands.push(Brand.find(params['brand_id']))
+  redirect '/stores'
+end
+
+#delete store
+delete('/store/:id') do
+  Store.find(params['id'].to_i).destroy
+  redirect '/stores'
 end
 
 

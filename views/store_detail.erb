@@ -13,3 +13,39 @@
   <% end %>
 <% end %>
 </span></h5>
+
+
+<!-- Delete Store -->
+<form action="/store/<%= @stores.id %>" method="post" class="right delete-form">
+ <input name="_method" type="hidden" value="delete">
+ <button type="submit" class="btn red right">Delete Store</button>
+</form>
+<br>
+
+<!-- update Store name -->
+<h5>Update Store</h5>
+    <form action="/store/<%= @stores.id() %>" method="post">
+      <input name="_method" type="hidden" value="patch">
+
+      <label for="new-name">Update Store Name</label>
+      <input id="new-name" name="new-name" type="text" required><br>
+
+      <label for="new-address">Address</label>
+      <input id="new-address"  name="new-address"type="text" class="validate" ><br>
+
+      <label for="new-rating">Update Rating</label>
+      <input id="new-rating" name="new-rating" type="text" required><br>
+
+      <label>Select a Brand</label><br>
+
+      <% if @allbrands.any?() %>
+        <select name="brand_id" class="browser-default" required>
+          <!-- <option value=""></option> -->
+          <% @allbrands.each() do |brand| %>
+            <option value="<%= brand.id()%>"><%= brand.name() %></option>
+          <% end %>
+        </select><br><br>
+      <% end %>
+
+      <button type="submit" class="btn">Update</button>
+    </form>

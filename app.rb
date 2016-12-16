@@ -59,8 +59,6 @@ end
 
 
 
-
-
 #delete store
 delete('/store/:id') do
   Store.find(params['id'].to_i).destroy

@@ -26,19 +26,18 @@ get('/store/:id') do
   erb(:store_detail)
 end
 
-#create recipe
+#create store
 post('/stores') do
   new_name = params['store-name'] # [] are the same as .fetch but default nil or null
   new_address = params['address']
-  new_cost = params['cost']
   new_rating = params['rating']
   new_brand = Brand.find(params['brand_id'].to_i)
   #creates a new store with the data it fetched above
-  @stores = Store.new({:name => new_name, :address => new_address, :cost => new_cost, :ratings => new_rating})
+  @stores = Store.new({:name => new_name, :address => new_address, :ratings => new_rating})
   if @stores.save
       #pushes new brand to the store you just created
       @stores.brands.push(new_brand)
-      redirect "/recipes"
+      redirect "/stores"
   else
     erb(:errors)
   end

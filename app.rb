@@ -60,3 +60,17 @@ post('/brands') do
     erb(:errors2)
   end
 end
+
+#brands - multiple
+get('/brands') do
+  #get all your brands
+  @brands = Brand.all
+  erb(:brands)
+end
+
+#brands - single
+get('/brands/:id') do
+  #find the specific brand by id
+  @brands = Brand.find(params['id'].to_i)
+  erb(:brand)
+end

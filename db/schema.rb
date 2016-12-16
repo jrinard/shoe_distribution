@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20161216160322) do
     t.string "name"
   end
 
-  create_table "brands_shoes", force: :cascade do |t|
-    t.integer "shoe_id"
+  create_table "brands_stores", force: :cascade do |t|
+    t.integer "store_id"
     t.integer "brand_id"
   end
 

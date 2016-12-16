@@ -5,7 +5,7 @@
 ## Description
 
 Web Application that allows the user to create shoe stores, and brands they carry.
-Allows user to assign brands to individual stores and to manage store data and brand data.
+Allows user to assign brands to individual stores and to manage store data and brand data. The main objective of this app is to demonstrate many-to-many relationships between stores and brands using active record.
 
 **User Stories**
 
@@ -35,7 +35,7 @@ Allows user to assign brands to individual stores and to manage store data and b
 
 ## Technologies Used
 
-_Ruby, Sinatra, SQL, Postgres, JavaScript, MaterializeCSS
+*Ruby, Sinatra, SQL, Postgres, JavaScript, MaterializeCSS*
 
 ### License
 

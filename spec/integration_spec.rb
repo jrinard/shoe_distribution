@@ -63,6 +63,21 @@ describe('Main Route', {:type => :feature}) do
     end
   end
 
+  describe('Modify a Brand', {:type => :feature}) do
+      it "allows user to update a brand" do
+        test_brand = Brand.create({:name => "Crocs"})
+        visit("/brands/#{test_brand.id}")
+        fill_in('new_brand', :with => "Crocs2")
+        click_button("Save")
+        expect(page).to have_content 'Crocs2'
+      end
+      it "allows user to delete a brand" do
+        test_brand = Brand.create({:name => "Crocs"})
+        visit("/brands/#{test_brand.id}")
+        click_button("Delete")
+        expect(page).not_to have_content 'Crocs'
+      end
+    end
 
 
 

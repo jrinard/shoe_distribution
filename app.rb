@@ -95,3 +95,21 @@ get('/brands/:id') do
   @brands = Brand.find(params['id'].to_i)
   erb(:brand)
 end
+
+#update brand
+patch('/brands/:id') do
+  #grab the new brand name
+  new_brand = params['new_brand']
+  #find the brand with the id
+  @brands = Brand.find(params['id'].to_i)
+  #update that found brand with the new brand
+  @brands.update({:name => new_brand})
+  @brands = Brand.all
+  erb(:brands)
+end
+
+#delete brand
+delete('/brands/:id') do
+  Brand.find(params['id'].to_i).destroy
+  redirect '/brands'
+end

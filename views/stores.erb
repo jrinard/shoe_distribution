@@ -1,0 +1,15 @@
+<h3>Store List</h3>
+<br>
+<!-- List all stores with a loop -->
+<% if @stores.any?() %>
+  <h5>Here are your stores:</h5>
+
+  <ul>
+    <% @stores.each() do |store| %>
+      <li><a href="/store/<%= store.id()%>"><span class="med teal-text"><h5><%= store.name() %></h5></span></a></li>
+    <% end %>
+  </ul>
+
+<% else %>
+    <p>There are no stores yet!</p>
+<% end %>

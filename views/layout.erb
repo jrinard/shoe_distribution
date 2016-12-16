@@ -1,18 +1,29 @@
 <html>
 <head>
-  <title></title>
+  <title>Shoe Distribution</title>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<div class="container">
-  <%= yield %>
-</div>
+  <nav>
+  <div class="nav-wrapper navbar-fixed teal lighten-2">
+    <a href="/" class="brand-logo center">Shoe Distribution</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+      <li><a href="/stores">Stores</a></li>
+      <li><a href="/brands">Brands</a></li>
+    </ul>
+  </div>
+</nav>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-<script src="/js/main.js"></script>
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

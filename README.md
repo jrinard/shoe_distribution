@@ -35,7 +35,7 @@ Allows user to assign brands to individual stores and to manage store data and b
 
 ## Technologies Used
 
-*Ruby, Sinatra, SQL, Postgres, JavaScript, MaterializeCSS*
+*HTML, Ruby, Sinatra, SQL, Postgres, JavaScript, MaterializeCSS*
 
 ### License
 

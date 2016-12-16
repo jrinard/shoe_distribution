@@ -1,6 +1,5 @@
 <h3>Welcome</h3>
 <br>
-
 <!-- Create a brand -->
 <h5>Step 1. Create a brand</h5>
 <form action="/brands" method="post">
@@ -9,20 +8,16 @@
   <button type="submit" name="button" class="btn">Create Brand</button>
 </form>
 <br>
-
 <!-- Create a new store -->
 <h5>Step 2. Create a new store</h5>
 <form action="/stores" method="post">
   <div class="form-group">
     <label for="new-store-name">New Store Name</label>
-    <input type="text" class="validate" name="store-name" id="new-store-name" ><br>
-
+    <input type="text" class="validate" name="store-name" id="new-store-name" placeholder="Crocs Store"><br>
     <label for="new-address">Address</label>
-    <input type="text" class="validate" name="address" id="new-address" ><br>
-
+    <input type="text" class="validate" name="address" id="new-address" placeholder="1 Infinite Loop, Portland OR"><br>
     <label for="new-rating">Store Rating</label>
-    <input type="text" class="validate" name="rating" id="new-rating" placeholder="3.5" ><br>
-
+    <input type="text" class="validate" name="rating" id="new-rating" placeholder="On a scale from 1-10" ><br>
     <label>Select a Brand</label><br>
     <!-- Select box that loops all the brands down as options -->
     <% if @brands.any?() %>

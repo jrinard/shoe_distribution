@@ -1,18 +1,13 @@
 <h3>Brand List</h3>
 <br>
-
 <% if @brands.any?() %>
   <h5>Here are your brands:</h5>
   <i>Select a specific brand to modify it</i>
-
   <ul>
     <% @brands.each() do |brand| %>
       <li><a href="/brands/<%= brand.id()%>"><span class="med teal-text"><h5><%= brand.name() %></h5></span></a></li>
     <% end %>
   </ul>
-
 <% else %>
-
     <p>There are no brands yet!</p>
-
 <% end %>

@@ -4,7 +4,7 @@
 
 <br>
 <h5>Address: <span class="med teal-text"><%= @stores.address %></span></h5>
-<h5>Rating: <span class="med teal-text"><%= @stores.ratings %></span></h5>
+<h5>Store Rating: <span class="med teal-text"><%= @stores.ratings %></span></h5>
 
 <h5>Brands: <span class="med teal-text">
 <% if @brands.any? %>
@@ -28,13 +28,13 @@
       <input name="_method" type="hidden" value="patch">
 
       <label for="new-name">Update Store Name</label>
-      <input id="new-name" name="new-name" type="text" required><br>
+      <input id="new-name" name="new-name" type="text" placeholder="Crocs Store" required><br>
 
       <label for="new-address">Address</label>
-      <input id="new-address"  name="new-address"type="text" class="validate" required><br>
+      <input id="new-address"  name="new-address"type="text" class="validate" placeholder="1 Infinite Loop, Portland OR" required><br>
 
       <label for="new-rating">Update Rating</label>
-      <input id="new-rating" name="new-rating" type="text" required><br>
+      <input id="new-rating" name="new-rating" type="text" placeholder="On a scale from 1-10" required><br>
 
       <label>Select a Brand</label><br>
 

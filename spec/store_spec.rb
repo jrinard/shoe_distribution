@@ -1,5 +1,5 @@
 require('spec_helper')
 
-describe Question do
-  
+describe Store do
+
 end

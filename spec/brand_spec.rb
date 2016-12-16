@@ -1,5 +1,5 @@
 require('spec_helper')
 
-describe Survey do
-  
+describe Brand do
+
 end

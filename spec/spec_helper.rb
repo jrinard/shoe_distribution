@@ -2,12 +2,12 @@ ENV['RACK_ENV'] = 'test'
 require('rspec')
 require('pg')
 require('sinatra/activerecord')
-# require('project')
+require('./lib/store')
+require('./lib/brand')
 
 RSpec.configure do |config|
   config.after(:each) do
-    # Project.all().each() do |project|
-    #   project.destroy()
-    # end
+    Store.destroy_all
+    Brand.destroy_all
   end
 end

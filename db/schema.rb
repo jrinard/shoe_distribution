@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20161216160322) do
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.string "cost"
     t.float  "ratings"
   end
 

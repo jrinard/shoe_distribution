@@ -6,8 +6,8 @@ require('./lib/store')
 require('./lib/brand')
 
 RSpec.configure do |config|
-  config.before(:each) do
-    Store.destroy_all
-    Brand.destroy_all
+  config.after(:each) do
+    Store.all.each(&:destroy)
+    Brand.all.each(&:destroy)
   end
 end
